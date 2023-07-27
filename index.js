@@ -2,6 +2,10 @@ import app from "./app.js";
 import config from "./utils/config.js";
 import axios from "axios";
 
+app.get("/", (_req, res) => {
+  res.send("Hello World!");
+});
+
 app.get("/weather", async (req, res) => {
   const response = await axios.get(
     `https://api.openweathermap.org/data/2.5/weather?q=Manila&appid=${config.WEATHERAPIKEY}`
